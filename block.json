@@ -1,0 +1,123 @@
+{
+    "$schema": "https://json.schemastore.org/block.json",
+    "apiVersion": 3,
+    "name": "verdure/dynamic-news",
+    "version": "1.0.0",
+    "title": "Dynamic News",
+    "description": "List of post from default post type.",
+    "icon": "welcome-widgets-menus",
+    "category": "vdplug",
+    "textdomain": "vdplug",
+    "keywords": [
+        "Dynamic News Teaser"
+    ],
+    "supports": {
+        "anchor": true
+    },
+    "usesContext": [
+        "postId"
+    ],
+    "render": "file:./render-template.php",
+    "attributes": {
+        "categories": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        },
+        "showSubpages": {
+            "type": "boolean",
+            "default": false
+        },
+        "postType": {
+            "type": "array",
+            "default": ["post"]
+        },
+        "displayLoadmore": {
+            "type": "boolean",
+            "default": false
+        },
+        "displayPostContent": {
+            "type": "boolean",
+            "default": true
+        },
+        "displayPostContentRadio": {
+            "type": "string",
+            "default": "excerpt"
+        },
+        "displayFeaturedImage": {
+            "type": "boolean",
+            "default": true
+        },
+        "featuredImageSizeSlug": {
+            "type": "string",
+            "default": "teaser_16_9"
+        },
+        "featuredImageSizeWidth": {
+            "type": "number",
+            "default": null
+        },
+        "featuredImageSizeHeight": {
+            "type": "number",
+            "default": null
+        },
+        "displayPostDate": {
+            "type": "boolean",
+            "default": true
+        },
+        "excerptLength": {
+            "type": "number",
+            "default": 55
+        },
+        "columns": {
+            "type": "number",
+            "default": 2
+        },
+        "order": {
+            "type": "string",
+            "default": "desc"
+        },
+        "orderBy": {
+            "type": "string",
+            "default": "date"
+        },
+        "postLayout": {
+            "type": "string",
+            "default": "grid"
+        },
+        "postsToShow": {
+            "type": "number",
+            "default": 4
+        },
+        "readmoreType": {
+            "type": "string",
+            "default": "readmore"
+        }
+    },
+    "example": {
+        "viewportWidth": 900,
+        "attributes": {
+            "displayFeaturedImage": false,
+            "columns": 2,
+            "postsToShow": 4
+        }
+    },
+    "styles": [
+        {
+            "name": "default",
+            "label": "Default",
+            "isDefault": true
+        },
+        {
+            "name": "2-cols-slider",
+            "label": "2 Columns / Slider"
+        },
+        {
+            "name": "scroll-anim",
+            "label": "Scroll Animation"
+        }
+    ],
+    "editorScript": "file:index.js",
+    "viewScript": "file:view.js",
+    "style": "file:style-index.css"
+}
